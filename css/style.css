@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&family=Mulish:wght@300;400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Sen:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Lobster&family=Nunito:wght@200;300;400;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Sen:wght@400;700;800&display=swap');
 
 :root {
     --roboto: "Roboto", sans-serif;
@@ -38,6 +39,12 @@ button:hover, button:focus, button:active {
 	outline: none !important;
 }
 
+input:focus, input:active {
+	outline: none !important;
+	box-shadow: none !important;
+	border-color: #ced4da !important;
+}
+
 /*-------------------------------------------------------
                     COMMON STYLES
 -------------------------------------------------------*/
@@ -49,14 +56,15 @@ button:hover, button:focus, button:active {
 
 /*====> button <====*/
 .family_btn_common {
-	background: linear-gradient(45deg, var(--brand-color), var(--brand-color-2));
+	background: #15AB51;
 	transition: 0.25s ease-in-out all;
 	border-radius: 50px;
     padding: 10px 40px;
 	border: none;
 	color: white;
-	font-weight: 600;
+	font-weight: 700;
 	font-family: var(--nunito);
+	letter-spacing: 0.2px;
 }
 
 .family_btn_common:hover {
@@ -72,13 +80,58 @@ button:hover, button:focus, button:active {
     padding: 10px 10px;
     min-width: 130px;
     width: 100%;
-	font-weight: 600;
+	font-weight: 700;
 	font-family: var(--nunito);
 }
 .family_btn_border:hover {
-	background: linear-gradient(45deg, var(--brand-color), var(--brand-color-2));
+	background: #15AB51;
 	color: white !important;
 }
+
+.family_btn_normal {
+	background: #15AB51;
+	transition: 0.25s ease-in-out all;
+	border-radius: 50px;
+    padding: 10px 40px;
+	border: none;
+	color: white;
+	font-weight: 700;
+	font-family: var(--nunito);
+	letter-spacing: 0.2px;
+}
+
+/*====> main header <====*/
+.main_header {
+	text-align: center;
+}
+
+.main_header h2 {
+	font-family: var(--nunito);
+	font-weight: 800;
+	font-size: 41px;
+	color: #344c61;
+}
+
+.main_header p {
+
+}
+
+/*====> Scroll bar <====*/
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-thumb {
+    background: #6f7185;
+    border-radius: 30px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);
+    box-shadow: inset 0 0 6px rgba(0,0,0,.1);
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
 
 
 /*-------------------------------------------------------
@@ -89,7 +142,7 @@ button:hover, button:focus, button:active {
 }
 
 .header__section {
-    padding: 11px 100px;
+    padding: 9px 100px;
     position: fixed;
     left: 0;
     right: 0;
@@ -123,7 +176,7 @@ button:hover, button:focus, button:active {
 .header__section .nav_list ul li a {
 	text-decoration: none;
     z-index: 1;
-    padding-inline: 16px;
+    padding-inline: 14px;
     font-weight: 700;
     height: 100%;
     letter-spacing: 1px;
@@ -221,7 +274,6 @@ button:hover, button:focus, button:active {
 	justify-content: center;
 }
 
-
 .st0{clip-path:url(#SVGID_2_);fill:url(#SVGID_3_);}
 .st1{clip-path:url(#SVGID_5_);fill:url(#SVGID_6_);}
 .st2{clip-path:url(#SVGID_8_);fill:url(#SVGID_9_);}
@@ -311,10 +363,325 @@ button:hover, button:focus, button:active {
                      DISCOVER STYLE
 -------------------------------------------------------*/
 .discover_section {
+	position: relative;
 	width: 100%;
-	padding: 100px 0;
+	padding: 60px 0;
+	background: url('../images/discover_bg.png') repeat-x center/ cover;
+	width: 100%;
+    height: 500px;
+	background-position: center;
+	animation: bgAnim 160s linear infinite alternate;
 }
 
+@keyframes bgAnim {
+	0% {
+		background-position-x: 0;
+	}
+	100% {
+		background-position-x: 1500px;
+	}
+}
+
+.search_input_wrapper {
+    display: flex;
+    align-items: center;
+	justify-content: center;
+    max-width: 0;
+    margin: auto;
+    margin-top: 40px;
+	border-radius: 30px;
+	background:white;
+	box-shadow: 1px 1px 15px rgb(0 0 0 / 10%);
+}
+
+.search_input_wrapper input {
+	border-radius: 30px 0px 0px 30px;
+	/* padding: 14px 22px !important; */
+	padding: 14px 0;
+
+	height: 100%;
+	transition: 0.4s ease-in-out all;
+	border-color: transparent !important;
+}
+
+.search_input_wrapper input:focus {
+	box-shadow: 1px 1px 15px rgb(0 0 0 / 10%);
+}
+
+.search_input_wrapper.fadez {
+	transition: 0.4s ease-in-out all;
+	max-width: 740px;
+}
+
+.search_input_wrapper.fadez input {
+	padding: 14px 22px !important;
+}
+ 
+
+.search_input_wrapper input ~ button {
+	border-radius: 30px;
+	height: 100%;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	box-shadow: 1px 1px 15px rgb(0 0 0 / 10%);
+	height: 52px;
+}
+
+.search_input_wrapper input ~ button:hover {
+	filter: contrast(0.8);
+}
+
+
+
+/*-------------------------------------------------------
+                     CONNECTS STYLE
+-------------------------------------------------------*/
+.connect_section {
+	position: relative;
+	width: 100%;
+	padding: 80px 0;
+	width: 100%;
+}
+
+.connect_section::before {
+	content: '';
+	position: absolute;
+	background: url('../images/smily_bg.JPG') repeat center/ contain;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	opacity: 0.3;
+}
+
+.connection_main {
+	padding-top: 3em;
+}
+
+.connect_box {
+	background: white;
+    padding: 25px;
+    box-shadow: 1px 1px 15px rgb(0 0 0 / 20%);
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+.connect_box::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(176deg, var(--brand-color), var(--brand-color-2));
+    transform: rotate(45deg);
+    opacity: 0.95;
+	transition: 0.35s ease-in-out all;
+}
+
+.connect_box:hover::after {
+	right: -55px;
+    bottom: -55px;
+	opacity: 0.7;
+}
+
+.connect_box img {
+    width: 45px;
+    height: 54px;
+	margin-bottom: 10px;
+	transition: 0.4s ease-in-out all;
+}
+
+.connect_box h3 {
+    font-family: var(--nunito);
+    font-weight: 700;
+    font-size: 21px;
+	margin-bottom: 10px;
+}
+
+.connect_box:hover img {
+	transform: rotateY(180deg);
+}
+
+/*-------------------------------------------------------
+                     STORIES STYLE
+-------------------------------------------------------*/
+.stories_section {
+	position: relative;
+	width: 100%;
+	padding: 80px 0;
+	width: 100%;
+	background: url(../images/bg_demos.png)no-repeat right bottom/ 1100px;
+}
+
+.stories_main .swiper-container {
+	padding: 7px 20px;
+}
+
+.stories_section .swiper-button-prev, .stories_section .swiper-button-next {
+	background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 50%;
+    -webkit-box-shadow: 1px 1px 15px rgb(0 0 0 / 50%);
+    box-shadow: 1px 1px 15px rgb(0 0 0 / 50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.6rem;
+    transform: translateY(-50%);    
+  }
+
+  .stories_section i.fa {
+	color: #868686;
+	font-size: 24px;	
+  }
+
+  .stories_section .item h6 {
+	text-align: center;
+	  color: #556575;
+	  font-size: 16px;
+	  padding-top: 1em;
+	  padding-bottom: 1em;
+	  border-bottom: 3px solid #23a28d8c;
+	  background: white;
+  }
+
+  .stories_section .category_img {
+	  overflow: hidden;
+  }
+  
+  .stories_section .category_img img {
+	width: 100%;
+	height: 240px;
+	object-fit: cover;
+  }
+
+.stories_main {
+	padding-top: 3em;
+}
+/* 
+.stories_section .category_img img, .stories_section .category_img {
+	border-radius: 10px 10px 0px 0px !important;
+} */
+
+.stories_section .item img {
+	transition: 0.6s cubic-bezier(0.48, -0.12, 0.29, 1.87) all;
+}
+
+.stories_section .item:hover img {
+	transform: scale(1.1);
+}
+
+.stories_section .item {
+	box-shadow: 1px 1px 15px rgb(0 0 0 / 10%);
+}
+
+/*-------------------------------------------------------
+                     MATRIMONY STYLE
+-------------------------------------------------------*/
+.matrimony_section {
+	position: relative;
+	width: 100%;
+	padding: 80px 0;
+	width: 100%;
+	background: url('../images/pattren.jpg');
+}
+
+.matri_main {
+	position: relative;
+	top: -20px;
+}
+
+.matrimony_section .main_header h2 {
+	font-size: 46px;
+}
+
+.matrimony_section .main_header p {
+	margin-bottom: 0 !important;
+}
+
+.matrimony_content_area {
+	background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px rgb(0 0 0 / 20%);
+    max-width: 480px;
+    width: 100%;
+	padding:40px 30px;
+	transform-style: preserve-3d;
+}
+
+.matrimony_content_area .love_icon {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	margin-bottom: 15px;
+	transform: translateZ(20px)
+}
+
+.matrimony_content_area .love_icon i {
+	font-size: 50px;
+}
+
+.matrimony_content_area .love_icon i:nth-child(1) {
+	color: var(--brand-color);
+}
+
+.matrimony_content_area .love_icon i:nth-child(2) {
+	color: var(--brand-color-2);
+}
+
+.matrimony_content_area .text_area {
+	/* transform: translateZ(20px) */
+}
+
+.matrimony_content_area .text_area h3 {
+	font-family: 'Lobster', cursive;
+    font-size: 50px;
+    letter-spacing: 0.5px;
+    background: linear-gradient(
+45deg, #ff0023, #9b051a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+	transform: translateZ(20px)
+}
+
+.matrimony_content_area .text_area p {
+	max-width: 45ch;
+    font-weight: 500;
+	margin: auto;
+	color: #626262;
+}
+
+.matrimony_section button {
+	max-width: fit-content;
+    margin: 1.8em auto auto auto;
+	transform: translateZ(20px);
+	background: linear-gradient(to left, var(--brand-color), var(--brand-color-2)) !important;
+	box-shadow: 1px 1px 15px rgba(0,0,0,0.2);
+}
+
+.matrimony_section button:hover {
+	background: linear-gradient(to right, var(--brand-color), var(--brand-color-2)) !important;
+	filter: contrast(0.8);
+}
+
+.content__wrapper {
+	display: flex;
+    flex-direction: column;
+	margin-top: 2em;
+}
 
 /*-------------------------------------------------------
                     PRELOADER-STYLE
@@ -339,7 +706,7 @@ button:hover, button:focus, button:active {
 	-webkit-box-direction: normal;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	z-index: 999999;
+	z-index: 999999999999;
 	background-color: white;
 	opacity: 1;
 	visibility: visible;
