@@ -13,21 +13,21 @@ toggle_menu.addEventListener('click', function () {
 function gsapFun() {
     let tl = gsap.timeline({
         opacity: 0,
-        delay: 1
+        delay: 1.2
     });
 
-    tl.from("#main-head", { scale: 0, duration: 0.9, transformOrigin: 'center' })
-        .from("#main_x5F_hand", { scaleX: 0, scaleY: 0, duration: 2, transformOrigin: 'top' })
-        .from(".peoples", { scale: 0, transformOrigin: 'center', stagger: 0.6, ease: Back.easeOut.config(2) })
+    tl.from("#main-head", { scale: 0, duration: 0.6, ease: Back.easeOut.config(2), transformOrigin: 'center' })
+        .from("#main_x5F_hand", { scaleX: 0, scaleY: 0, duration: 1.8, transformOrigin: 'top' })
+        .from(".peoples", { scale: 0, duration: 0.5, delay: 0.5, transformOrigin: 'center', stagger: 0.4, ease: Back.easeOut.config(2) })
 
 
     let spelling = gsap.timeline({
-        opacity: 0,
-        delay: 7
+        opacity: 0.6,
+        delay: 7.3
     });
-    spelling.from("#letter-1", { scale: 0, transformOrigin: 'center', ease: Back.easeOut.config(2) })
-        .from("#letter-2", { scale: 0, transformOrigin: 'center', ease: Back.easeOut.config(2) })
-        .from("#letter-3", { scale: 0, transformOrigin: 'center', ease: Back.easeOut.config(2) })
+    spelling.from("#letter-1", { opacity:0, scale: 0.6, duration: 1, transformOrigin: 'center' }, "-=5")
+        .from("#letter-2", { opacity:0, scale: 0.6, duration: 1, transformOrigin: 'center' }, "-=5")
+        .from("#letter-3", { scale: 0, transformOrigin: 'center', ease: Back.easeOut.config(2), delay: 0.8 })
         .from("#letter-4", { scale: 0, transformOrigin: 'center', ease: Back.easeOut.config(2) })
         .from("#letter-5", { scale: 0, transformOrigin: 'center', ease: Back.easeOut.config(2) })
         .from("#letter-6", { scale: 0, transformOrigin: 'center', ease: Back.easeOut.config(2) })
@@ -72,7 +72,6 @@ const showPage = () => {
 
 //===============> Discover section searchbar <==============//
 let AllLi = document.querySelectorAll('.discover_section');
-console.log(AllLi);
 
 let liOption = {
     root: null,
